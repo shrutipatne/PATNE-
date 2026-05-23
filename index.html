@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Famous Monuments</title>
+
+<style>
+
+/* BODY STYLE */
+body{
+    font-family: Arial;
+    background: linear-gradient(to right, #dbefff, #f7fbff);
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* HEADING */
+h1{
+    color: darkblue;
+    font-size: 40px;
+}
+
+h2{
+    color: darkred;
+}
+
+/* PARAGRAPH */
+p{
+    font-size: 18px;
+}
+
+/* TABLE STYLE */
+table{
+    margin: auto;
+    border-collapse: collapse;
+    width: 80%;
+    background-color: white;
+    box-shadow: 0px 0px 10px gray;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 15px;
+}
+
+th{
+    background-color: #87cefa;
+    color: darkblue;
+    font-size: 20px;
+}
+
+/* IMAGE STYLE */
+img{
+    width: 250px;
+    height: 180px;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+img:hover{
+    transform: scale(1.05);
+}
+
+/* FORM STYLE */
+form{
+    background-color: white;
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+/* INPUTS */
+input, textarea, select{
+    width: 90%;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 16px;
+}
+
+/* BUTTON */
+button{
+    background-color: darkblue;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: navy;
+}
+
+</style>
+
+<script>
+
+function checkForm(form)
+{
+    // NAME VALIDATION
+    if(form.username.value == "")
+    {
+        alert("Name cannot be empty!");
+        form.username.focus();
+        return false;
+    }
+
+    // ONLY LETTERS
+    var re = /^[A-Za-z ]+$/;
+
+    if(!re.test(form.username.value))
+    {
+        alert("Name should contain only letters!");
+        form.username.focus();
+        return false;
+    }
+
+    // EXPERIENCE VALIDATION
+    if(form.exp.value == "")
+    {
+        alert("Please write your experience!");
+        form.exp.focus();
+        return false;
+    }
+
+    // SUCCESS MESSAGE
+    alert("Form Submitted Successfully!");
+
+    return true;
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h1>Famous Monuments of the World</h1>
+
+<p>Click on the images to know more about the monuments.</p>
+
+<table>
+
+<tr>
+<th>Monument</th>
+<th>Image</th>
+<th>Country</th>
+</tr>
+
+<tr>
+<td>Taj Mahal</td>
+
+<td>
+<a href="https://en.wikipedia.org/wiki/Taj_Mahal" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg">
+</a>
+</td>
+
+<td>India</td>
+</tr>
+
+<tr>
+<td>Eiffel Tower</td>
+
+<td>
+<a href="https://en.wikipedia.org/wiki/Eiffel_Tower" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg">
+</a>
+</td>
+
+<td>France</td>
+</tr>
+
+<tr>
+<td>Statue of Liberty</td>
+
+<td>
+<a href="https://en.wikipedia.org/wiki/Statue_of_Liberty" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Statue_of_Liberty_7.jpg">
+</a>
+</td>
+
+<td>USA</td>
+</tr>
+
+</table>
+
+<br><br>
+
+<h2>Share Your Experience</h2>
+
+<form onsubmit="return checkForm(this);">
+
+<p>Your Name</p>
+<input type="text" name="username" placeholder="Enter your name">
+
+<p>Favourite Monument</p>
+
+<select>
+<option>Taj Mahal</option>
+<option>Eiffel Tower</option>
+<option>Statue of Liberty</option>
+</select>
+
+<p>Your Experience</p>
+
+<textarea name="exp" rows="5" placeholder="Write your experience"></textarea>
+
+<br><br>
+
+<button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
